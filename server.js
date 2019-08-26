@@ -5,11 +5,17 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //Session middleware
 var session = require('express-session');
+//require passport
+var passport = require('passport');
 // load the env vars
 require('dotenv').config();
+//config for database
 require('./config/database');
+//configuration for passport
+require('.config/passport');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
 
 
 
@@ -25,10 +31,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 //mount session middelware for using passport
 app.use(session({
-  secret: 'PictoPicto',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
-}))
+}));
+//mount passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
