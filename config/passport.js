@@ -17,7 +17,7 @@ passport.use(new GoogleStrategy(
     },
     function(accessToken, refreshToken, profile, cb){
         console.log('Inside passport function');
-        User.findOne({'googeId': profile.id} , function(err, user){
+        User.findOne({'googleId': profile.id} , function(err, user){
             if(err) return cb(err);
             if(user) {//runs if user already exists in db
                 return cb(null, user);
@@ -26,7 +26,7 @@ passport.use(new GoogleStrategy(
                 var newUser = new User({
                     name: profile.displayName,
                     email: profile.emails[0].value,
-                    googeId: profile.id
+                    googleId: profile.id
                 });
                 //save the new user
                  //Runs when a user has logged in with OAuth
