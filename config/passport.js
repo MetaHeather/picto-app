@@ -16,6 +16,7 @@ passport.use(new GoogleStrategy(
         callbackURL: process.env.GOOGLE_CALLBACK
     },
     function(accessToken, refreshToken, profile, cb){
+        console.log('Inside passport function');
         User.findOne({'googeId': profile.id} , function(err, user){
             if(err) return cb(err);
             if(user) {//runs if user already exists in db
