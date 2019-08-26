@@ -3,7 +3,8 @@ var passport = require('passport');
 //bring in the google oauth strategy
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 //get access to the User schema
-var User = require 
+var User = require('../models/user'); 
+
 
 //new instance of Google Strategy - takes 2 arguments
 //A reference object and a callback
@@ -15,16 +16,16 @@ passport.use(new GoogleStrategy(
         callbackURL: process.env.GOOGLE_CALLBACK
     },
     function(accessToken, refreshToken, profile, cb){
-        User.findOne({googeId: profile.id} , function(err, student){
+        User.findOne({googeId: profile.id} , function(err, user){
             if(err) return cb(err);
-            if (user) {//runs if user already exists in db
+            if(user) {//runs if user already exists in db
                 return cb(null, user);
             } else {//runs if there is a first time user
                 //Creates new user
                 var newUser = new User({
                     name: profile.displayName,
                     email: profile.emails[0].value,
-                    googeId: profile.id    
+                    googeId: profile.id
                 });
                 //save the new user
                  //Runs when a user has logged in with OAuth

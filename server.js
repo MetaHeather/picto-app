@@ -12,7 +12,7 @@ require('dotenv').config();
 //config for database
 require('./config/database');
 //configuration for passport
-require('.config/passport');
+require('./config/passport');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
