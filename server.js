@@ -13,6 +13,7 @@ require('dotenv').config();
 require('./config/database');
 //configuration for passport
 require('./config/passport');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -29,17 +30,17 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 //mount session middelware for using passport
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }));
+
 //mount passport
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
