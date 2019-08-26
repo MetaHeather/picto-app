@@ -22,6 +22,13 @@ router.get('/oauth2callback', passport.authenticate(
   }
 ));
 
+//Function for checking if user is logged in or not
+//can be used to keep user who isn't logged in from 
+function isLoggedIn(req, res, next){
+  if(req.isAuthenticated()) return next;
+  res.redirect('/auth/google');
+};
+
 router.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
