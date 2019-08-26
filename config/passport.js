@@ -32,7 +32,6 @@ passport.use(new GoogleStrategy(
                     if(err) return cb(err);
                     return cb(null, newUser);
                 });
-
             }
         });
     }
@@ -45,7 +44,6 @@ passport.serializeUser(function(user, done){
 
 passport.deserializeUser(function(id, done){
     User.findById(id, function(err, user){
-        if(err) return done(err);
-        done(null, user);
+        done(err, user);
     });
 });
