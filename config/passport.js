@@ -27,7 +27,7 @@ passport.use(new GoogleStrategy(
                     name: profile.displayName,
                     email: profile.emails[0].value,
                     googleId: profile.id,
-                    photo: profile.photos[0].value
+                    profilePic: profile.photos[0].value
                 });
                 //save the new user
                  //Runs when a user has logged in with OAuth

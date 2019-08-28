@@ -1,11 +1,10 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-
-var userSchema = new mongoose.Schema({
+var userSchema = new Schema({
     googleId: String,
     name: String,
     profilePic: String,
-    Picto: [String]
 },{
     timestamps: true
 });

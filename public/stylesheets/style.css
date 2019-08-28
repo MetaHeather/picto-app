@@ -28,18 +28,27 @@ Styles for Canvas
   display: inline-block;
 }
 
-#red {
-  background-color: red;
+.pink {
+  background-color: #FFA8C4;
 }
 
-#blue {
-  background-color: blue;
+.blue {
+  background-color: #72B8CC;
 }
 
-#green{
-  background-color: green;
+.green {
+  background-color: #3FFF42;
 }
 
-#yellow{
-  background-color: yellow;
+.yellow{
+  background-color: #FFF14A;
+}
+
+
+.link-button {
+  border: solid black 1px;
+  border-radius: 4vmin;
+  text-decoration: none;
+  color: black;
+  padding: 1vmin;
 }

@@ -1,6 +1,25 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var pictoSchema = new mongoose.Schema({
-  
+var commentSchema = new Schema({
+    imgData: String,
+    creator: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      },
+},{
+    timestamps:true
 });
 
+var pictoSchema = new Schema({
+  imgData: String,
+  creator: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  comments: [commentSchema]
+},{
+    timestamps: true
+});
+
+module.exports = mongoose.model('Picto', pictoSchema);

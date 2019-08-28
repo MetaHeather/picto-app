@@ -27,7 +27,7 @@ colorSelection.addEventListener('click', function(evt){
   ctx.strokeStyle = evt.target.id;
 });
 
-//Find out what below does
+//Mouse down and mouse up event listeners
 canvas.addEventListener('mousedown', function(e) {
     ctx.beginPath();
     ctx.moveTo(mouse.x, mouse.y);
@@ -43,10 +43,12 @@ function onPaint() {
     ctx.stroke();
 };
 
+
+//Saving and loading canvas
 function saveCanvas(){
     //This is where you will be doing the fetch
     let dataURL = canvas.toDataUrl();
-    console.log(dataUrl)
+    console.log(dataUrl);
     // fetch("/images", { method: "POST",  body: dataUrl })
 };
 
