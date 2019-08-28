@@ -6,3 +6,40 @@ body {
 a {
   color: #00B7FF;
 }
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/* 
+Styles for Canvas 
+*/
+
+#paint {background: #333333;}
+
+.colorSelection > div{
+  width: 5vmin;
+  height: 5vmin;
+  display: inline-block;
+}
+
+#red {
+  background-color: red;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#green{
+  background-color: green;
+}
+
+#yellow{
+  background-color: yellow;
+}

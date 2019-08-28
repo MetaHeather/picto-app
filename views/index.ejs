@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<%- include('partials/header') %>
     <h1><%= title %></h1>
   
-    <p>Welcome to <%= title %></p>
+    <p>Welcome to Picto</p>
     <% if(user) { %>
       <img src="<%= user.photo %>" width='100'>
       <br>

@@ -3,12 +3,12 @@
 [Link to deployed application](https://picto-app.herokuapp.com/)
 
 ## What is it?
-Picto is a message board app where users post and reply using only drawings instead of text.  It's a fun way to connect with both friends and strangers
+Picto is a message board app where users post and reply using only drawings instead of text.  It's a fun way to connect with both friends and strangers.
 ## How to use it:
-&ndash; User will log in with an existing Google Account <br>
+&ndash; User will log in with an existing Google Account. <br>
 &ndash; The Home page shows users their most recent Picto.  A Picto is a drawing that you post &#128515; <br>
 &ndash; On both the home page and profile page, there is a button to create a Picto, clicking it will bring you to a canvas page.  Go wild and submit your first Picto! &#128129; <br>
-&ndash; The Home page also shows other users recent Picto's.  You can click on them to add a comment and see other comments on that Picto, if there are any.  A comment is not text, users also commet with a Picto! <br>
+&ndash; The Home page also shows other users recent Picto's.  You can click on them to add a comment and see other comments on that Picto, if there are any.  A comment is not text, users also commet with a Picto! 
 
 
 
