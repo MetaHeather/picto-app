@@ -8,5 +8,10 @@ router.get('/new', pictoCtrl.newPicto);
 router.post('/', pictoCtrl.create);
 //gets form to show specific picto
 router.get('/:id', pictoCtrl.show);
+//Gets page to edit Picto
+router.get('/:id/edit', pictoCtrl.edit);
+//Updates specific Picto
+router.put('/:id', pictoCtrl.update);
+
 
 module.exports = router;

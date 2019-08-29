@@ -5,7 +5,7 @@ let canvas = document.getElementById('paint');
 
 let colorSelection = document.querySelector('.colorSelection');
 
-let submitButton = document.querySelector('#submit-picto');
+
 
 let ctx = canvas.getContext('2d');
 
@@ -45,31 +45,6 @@ function onPaint() {
     ctx.stroke();
 };
 
-//event listener for Submiting new Picto
-submitButton.addEventListener('click', saveCanvas);
 
-//Saving and loading canvas
-function saveCanvas(){
-    //This is where you will be doing the fetch
-    let dataURL = canvas.toDataURL();
-    fetch("/picto", { 
-      method: "POST",  
-      body: JSON.stringify({dataURL}), 
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      redirect: 'follow'
-    })
-    .then(function(){
-      window.location.href = "/home";
-    });
-};
 
-function loadCanvas(strDataURI){
-    ///You'll need to get the strDataURI from ejs
-    let img = new Image();
-    img.onload = function(){
-      ctx.drawImage(img,0,0); // Or at whatever offset you like
-    };
-    img.src = strDataURI;    
-}
+

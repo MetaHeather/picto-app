@@ -41,6 +41,7 @@ Styles for Canvas
   text-decoration: none;
   color: black;
   padding: 1vmin;
+  background-color: lightgrey;
 }
 
 .logo-bar {

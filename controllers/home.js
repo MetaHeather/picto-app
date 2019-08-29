@@ -23,7 +23,3 @@ function index(req, res, next) {
         next(err);
     });
 };
-
-
-
-

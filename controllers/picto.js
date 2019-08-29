@@ -3,7 +3,9 @@ const Picto = require('../models/picto');
 module.exports = {
     newPicto,
     create,
-    show
+    show,
+    edit,
+    update
 };
 
 function newPicto(req, res, next){
@@ -33,3 +35,22 @@ function show(req, res, next) {
             });
         });
 };
+
+function edit(req, res, next) {
+    Picto.findById(req.params.id)
+        .then(function (picto) {
+            res.render('picto/edit', {
+                user: req.user,
+                name: req.user.name,
+                profilePic: req.user.profilePic,
+                picto
+            });
+        })
+};
+
+function update(req, res, next) {
+    Picto.findByIdAndUpdate(req.params.id, req.body)
+    .then(function(picto){
+        res.redirect(`/home`)
+    });
+}
