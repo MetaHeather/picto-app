@@ -2,7 +2,8 @@ const Picto = require('../models/picto');
 
 module.exports = {
     newPicto,
-    create
+    create,
+    show
 };
 
 function newPicto(req, res, next){
@@ -10,8 +11,6 @@ function newPicto(req, res, next){
 };
 
 function create(req, res, next){
-    console.log(req.body);
-    console.log(req.body.dataURL);
     var picto = new Picto({
         imgData: req.body.dataURL,
         creator: req.user
@@ -21,4 +20,16 @@ function create(req, res, next){
         res.redirect('/home');
     });
 
+};
+
+function show(req, res, next) {
+    Picto.findById(req.params.id)
+        .then(function (picto) {
+            res.render('picto/show', {
+                user: req.user,
+                name: req.user.name,
+                profilePic: req.user.profilePic,
+                picto
+            });
+        });
 };

@@ -58,3 +58,13 @@ Styles for Canvas
 .user-name {
   display: inline-block;
 }
+
+.picto-img {
+  background-color: #333333;
+  display: block;
+  margin: 1em;
+}
+
+.profile-pic {
+  border-radius: 50%;
+}

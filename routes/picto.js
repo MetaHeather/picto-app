@@ -6,5 +6,7 @@ const pictoCtrl = require('../controllers/picto');
 router.get('/new', pictoCtrl.newPicto);
 //submits user created picto to profile
 router.post('/', pictoCtrl.create);
+//gets form to show specific picto
+router.get('/:id', pictoCtrl.show);
 
 module.exports = router;

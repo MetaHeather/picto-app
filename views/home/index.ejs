@@ -1,10 +1,16 @@
 <%- include('../partials/header') %>
 
 
-<img src="<%= user.profilePic %>" alt="Your Profile Picture" width="80">
+<img class="profile-pic" src="<%= user.profilePic %>" alt="Your Profile Picture" width="80">
 <p class="user-name"><%= name %></p>
 <a class="link-button" href="/picto/new">Create a Picto!</a>
 
-
+<% if(pictos.length){ 
+    pictos.forEach(function(picto){ %>
+      <a href="/picto/<%= picto._id %>">
+      <img class="picto-img" src="<%= picto.imgData %>" alt="Picto">     
+      </a> 
+  <%  }); 
+} %>
 
 <%- include('../partials/footer') %>
