@@ -6,18 +6,15 @@
     <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div>
-      <h1>PICTO</h1>
-    </div>
+      <div >
+      <h1 class="logo-bar">PICTO</h1>
+      </div>
+    
 
-    <h1><%= title %></h1>
-  
-    <p>Welcome to Picto</p>
-    <% if(user) { %>
-      <img src="<%= user.photo %>" width='100'>
-      <br>
-      <a href="/logout">Log Out</a>
-    <% } else { %>
-      <a href="/auth/google">Log In With Google</a>
-    <% } %>
+      <div class="login-section">
+        <h1 id="log-in">Log in with your Google Account</h1>
+        <a class="link-button" href="/auth/google">Log In With Google</a>
+      </div>
+
+
 <%- include('partials/footer') %>

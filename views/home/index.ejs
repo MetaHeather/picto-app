@@ -1,8 +1,10 @@
 <%- include('../partials/header') %>
 
-<h1>home</h1>
-<p><%= name %></p>
-<img src="<= profilePic %>" alt="Your Profile Picture" width="80">
-<a class="link-button" href="/new">Create a Picto!</a>
+
+<img src="<%= user.profilePic %>" alt="Your Profile Picture" width="80">
+<p class="user-name"><%= name %></p>
+<a class="link-button" href="/picto/new">Create a Picto!</a>
+
+
 
 <%- include('../partials/footer') %>

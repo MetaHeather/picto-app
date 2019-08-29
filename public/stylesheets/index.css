@@ -1,12 +1,43 @@
 body, html{
     margin:0;
-    padding:0;
+    padding: none;
+    background-color: #B68192;
+    position: relative;
 }
 
-div {
-    background-color: #49D5FF;
+.logo-bar {
+    background-color: #72B8CC;
     font-family: 'Nothing You Could Do', cursive;
+    font-weight: 900;
+    font-size: 8vmin;
     align-content: left;
     min-width: 100%;
-    min-height: 100%;
+    height: 10vmin;
+    margin: 0;
+    padding-left: 2vmin;
 }
+
+.login-section {
+    background-color: #72B8CC;
+    position: absolute;
+    text-align: center;
+    top: 30vmin;
+    left: 60vmin;
+    width: 80vmin;
+    height: 40vmin;
+}
+
+.link-button {
+    border: solid black 1px;
+    border-radius: 4vmin;
+    text-decoration: none;
+    color: black;
+    padding: 1vmin;
+    background-color: lightgrey;
+    margin-top: 100px;
+  }
+
+  #log-in {
+      margin-bottom: 10vmin;
+      margin-top: 10vmin;
+  }

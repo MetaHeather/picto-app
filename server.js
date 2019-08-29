@@ -16,6 +16,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var homeRouter = require('./routes/home');
+var pictoRouter = require('./routes/picto');
 
 
 var app = express();
@@ -42,7 +43,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/home', homeRouter);
-app.use('/', homeRouter);
+app.use('/picto', pictoRouter);
 
 
 // catch 404 and forward to error handler

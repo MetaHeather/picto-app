@@ -1,19 +1,9 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
 
-a {
-  color: #00B7FF;
-}
-
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
+body, html{
+  margin:0;
+  padding: none;
+  background-color: #B68192;
+  position: relative;
 }
 
 /* 
@@ -37,7 +27,7 @@ Styles for Canvas
 }
 
 .green {
-  background-color: #3FFF42;
+  background-color: #AAFF9B;
 }
 
 .yellow{
@@ -51,4 +41,20 @@ Styles for Canvas
   text-decoration: none;
   color: black;
   padding: 1vmin;
+}
+
+.logo-bar {
+  background-color: #72B8CC;
+  font-family: 'Nothing You Could Do', cursive;
+  font-weight: 900;
+  font-size: 8vmin;
+  align-content: left;
+  min-width: 100%;
+  height: 10vmin;
+  margin: 0;
+  padding-left: 2vmin;
+}
+
+.user-name {
+  display: inline-block;
 }

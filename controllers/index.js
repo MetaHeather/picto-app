@@ -1,4 +1,4 @@
-const User = require('../models/user');
+
 
 module.exports = {
     index
@@ -6,7 +6,6 @@ module.exports = {
 
 function index(req, res, next){
     res.render('index', {
-        title: 'LogIn',
         user: req.user
     });
 }
