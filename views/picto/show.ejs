@@ -11,5 +11,10 @@
    <a class="link-button" href="/picto/<%= picto._id %>/comments/new">Add a Comment</a> 
 <% } %>
 
+<p>Comments</p>
+
+<% comments.forEach(function(comment){ %>
+    <img class="comment-img" src="<%= comment.imgData %>" alt="Comment">
+<% }); %>
 
 <%- include('../partials/footer') %>

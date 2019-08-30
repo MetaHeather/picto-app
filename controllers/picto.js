@@ -1,4 +1,5 @@
 const Picto = require('../models/picto');
+const Comment = require('../models/comment');
 
 module.exports = {
     newPicto,
@@ -27,14 +28,20 @@ function create(req, res, next){
 function show(req, res, next) {
     Picto.findById(req.params.id)
         .then(function (picto) {
-            let isCurrentUser = (picto.creator.equals(req.user._id));
-            res.render('picto/show', {
-                user: req.user,
-                name: req.user.name,
-                profilePic: req.user.profilePic,
-                picto,
-                isCurrentUser
-            });
+            return Comment.find({
+                    picto: picto._id
+                })
+                .then(function (comments) {
+                    let isCurrentUser = (picto.creator.equals(req.user._id));
+                    res.render('picto/show', {
+                        user: req.user,
+                        name: req.user.name,
+                        profilePic: req.user.profilePic,
+                        picto,
+                        isCurrentUser,
+                        comments
+                    });
+                });
         });
 };
 

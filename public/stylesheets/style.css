@@ -66,6 +66,14 @@ Styles for Canvas
   margin: 1em;
 }
 
+.comment-img{
+  background-color: #333333;
+  display: block;
+  margin: 1em;
+  width: 210px;
+  height: 210px;
+}
+
 .profile-pic {
   border-radius: 50%;
 }
