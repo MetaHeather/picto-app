@@ -5,17 +5,18 @@ submitButton.addEventListener('click', saveCanvas);
 //Saving and loading canvas
 function saveCanvas(){
     //This is where you will be doing the fetch
-    let dataURL = canvas.toDataURL();
-    fetch("/picto", { 
+    let imgData = canvas.toDataURL();
+    fetch(`/picto/${pictoId}/comments`, { 
       method: "POST",  
       body: JSON.stringify({
-        dataURL
+        imgData,
+        picto: pictoId
       }),  
       headers: {
         'Content-Type': 'application/json',
       },
     })
     .then(function(){
-      window.location.href = "/home";
+      window.location.href = `/picto/${pictoId}`;
     });
 };

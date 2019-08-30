@@ -1,7 +1,13 @@
 <%- include('../partials/header') %>
+<script defer src="/javascripts/canvas.js"></script>
+<script defer src="/javascripts/new-comment.js"></script>
+<script>
+        let pictoId = "<%- picto._id %>";
+</script>
 
 <img class="picto-img" src="<%= picto.imgData %>" alt="Picto">
 
+<button id="submit-picto" class="link-button">Submit Comment</button>
 <%- include('../partials/canvas') %>
 
 <%- include('../partials/footer') %>
