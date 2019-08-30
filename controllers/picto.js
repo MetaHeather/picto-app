@@ -11,7 +11,9 @@ module.exports = {
 };
 
 function newPicto(req, res, next){
-    res.render('picto/new');
+    res.render('picto/new',{
+        user: req.user
+    });
 };
 
 function create(req, res, next){

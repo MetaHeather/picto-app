@@ -1,12 +1,16 @@
 <%- include('../partials/header') %>
-
-<%- include('../partials/canvas') %>
 <script>
     let pictoId = "<%- picto._id %>";
 </script>
+
 <script defer src="/javascripts/canvas.js"></script>
 <script defer src="/javascripts/edit-canvas.js"></script>
-<br>
-<button id="submit-picto" class="link-button">Submit Picto!</button>
+<div class="edit-canvas">
+    <div>
+        <%- include('../partials/canvas') %>
+        <button id="submit-picto" class="link-button">Submit Picto!</button>
+    </div>
+</div>
+
 
 <%- include('../partials/footer') %>

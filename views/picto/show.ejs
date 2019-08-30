@@ -1,23 +1,24 @@
 <%- include('../partials/header') %>
+<div class="show-page">
+  <div class="show-picto">
+    <img class="picto-img" src="<%= picto.imgData %>" alt="Picto">
+    <div class="action-buttons">
+      <% if(isCurrentUser){ %>
+      <a class="link-button" href="/picto/<%= picto._id %>/edit">Edit Picto</a>
+      <form action="/picto/<%= picto._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="link-button">Delete Picto</button>
+      </form>
+      <% } else { %>
+      <a class="link-button" href="/picto/<%= picto._id %>/comments/new">Add a Comment</a>
+      <% } %>
+    </div>
+  </div>
 
-<img class="profile-pic" src="<%= user.profilePic %>" alt="Your Profile Picture" width="80">
-<p class="user-name"><%= name %></p>
-
-<img class="picto-img" src="<%= picto.imgData %>" alt="Picto">    
-<br>
-<% if(isCurrentUser){ %>
-   <a class="link-button" href="/picto/<%= picto._id %>/edit">Edit Picto</a> 
-   <form action="/picto/<%= picto._id %>?_method=DELETE" method="POST">
-     <button type="submit" class="link-button">Delete Picto</button>
-   </form>
-<% } else { %>
-   <a class="link-button" href="/picto/<%= picto._id %>/comments/new">Add a Comment</a> 
-<% } %>
-
-<p>Comments</p>
-
-<% comments.forEach(function(comment){ %>
+  <div class=comments-section>
+    <p>Comments</p>
+    <% comments.forEach(function(comment){ %>
     <img class="comment-img" src="<%= comment.imgData %>" alt="Comment">
-<% }); %>
-
+    <% }); %>
+  </div>
+</div>
 <%- include('../partials/footer') %>

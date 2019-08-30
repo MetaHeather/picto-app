@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: sans-serif;
 }
@@ -40,27 +44,32 @@ Styles for Canvas
 Page Styles 
 */
 
-.home-page{
+.home-page, .show-page, .edit-canvas {
   display: grid;
   grid-template-columns: auto auto;
-  grid-gap: 5vmin;
+  grid-gap: 15vmin;
   justify-content: center;
+  margin: 5vmin;
 }
 
 .link-button {
+  display: inline-block;
   border: solid black 1px;
   border-radius: 4vmin;
   text-decoration: none;
+  font-size: 2\vmin;
   color: black;
   padding: 1vmin;
   background-color: lightgrey;
 }
 
 .logo-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #72B8CC;
   min-width: 100%;
-  height: 10vmin;
-  padding-left: 2vmin;
+  padding: 1vmin 2vmin;
 }
 
 .logo-bar > h1 {
@@ -70,6 +79,20 @@ Page Styles
   font-size: 8vmin;
 }
 
+.logo-bar > a {
+  text-decoration: none;
+  font-size: 3vmin;
+  color: black;
+}
+
+.account-info {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 2vmin;
+  align-items: center;
+  font-size: 4vmin;
+}
+
 .user-name {
   display: inline-block;
 }
@@ -77,7 +100,21 @@ Page Styles
 .picto-img {
   background-color: #333333;
   display: block;
-  margin: 1em;
+}
+
+.picto-link {
+  display: block;
+}
+
+.picto-link + .picto-link {
+  margin-top: 2vmin;
+}
+
+.your-pictos > header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .comment-img{
@@ -91,3 +128,13 @@ Page Styles
 .profile-pic {
   border-radius: 50%;
 }
+
+.action-buttons {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 2vmin;
+  margin-top: 2vmin;
+  justify-content: start;
+}
+
+

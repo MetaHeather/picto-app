@@ -5,9 +5,14 @@
         let pictoId = "<%- picto._id %>";
 </script>
 
-<img class="picto-img" src="<%= picto.imgData %>" alt="Picto">
-
-<button id="submit-picto" class="link-button">Submit Comment</button>
-<%- include('../partials/canvas') %>
+<div class="edit-canvas">
+        <div>
+                <img class="picto-img" src="<%= picto.imgData %>" alt="Picto">
+        </div>
+        <div>
+                <%- include('../partials/canvas') %>
+                <button id="submit-picto" class="link-button">Submit Comment</button>
+        </div>
+</div>
 
 <%- include('../partials/footer') %>
