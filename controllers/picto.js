@@ -27,11 +27,13 @@ function create(req, res, next){
 function show(req, res, next) {
     Picto.findById(req.params.id)
         .then(function (picto) {
+            let isCurrentUser = (picto.creator.equals(req.user._id));
             res.render('picto/show', {
                 user: req.user,
                 name: req.user.name,
                 profilePic: req.user.profilePic,
-                picto
+                picto,
+                isCurrentUser
             });
         });
 };

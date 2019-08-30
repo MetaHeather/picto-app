@@ -17,6 +17,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var homeRouter = require('./routes/home');
 var pictoRouter = require('./routes/picto');
+var commentsRouter = require('./routes/comments');
 
 
 var app = express();
@@ -44,7 +45,7 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/home', homeRouter);
 app.use('/picto', pictoRouter);
-
+app.use('/picto', commentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
