@@ -1,5 +1,5 @@
 const Picto = require('../models/picto');
-
+const User = require('../models/user')
 
 module.exports = {
     index
@@ -13,17 +13,19 @@ function index(req, res, next) {
             createdAt: 'descending'
         })
         .then(function (pictos) {
-            return Picto.where("creator").ne(req.user.id).limit(15)
+            return Picto.where("creator").ne(req.user.id).limit(45).sort({
+                createdAt: 'descending'
+            })
                 .then(function (otherPictos) {
                     res.render('home/index', {
                         user: req.user,
                         name: req.user.name,
                         profilePic: req.user.profilePic,
                         pictos,
-                        otherPictos
+                        otherPictos,
                     });
                 })
-        })
+                    })
         .catch(function (err) {
             next(err);
         });
