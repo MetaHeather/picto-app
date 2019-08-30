@@ -4,7 +4,6 @@ submitButton.addEventListener('click', editCanvas);
 
 //Saving and loading canvas
 function editCanvas(){
-    console.log(pictoId);
     //This is where you will be doing the fetch
     let dataURL = canvas.toDataURL();
     fetch(`/picto/${pictoId}`, { 

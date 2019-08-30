@@ -49,7 +49,7 @@ function edit(req, res, next) {
 };
 
 function update(req, res, next) {
-    Picto.findByIdAndUpdate(req.params.id, req.body)
+    Picto.findByIdAndUpdate(req.params.id, {imgData: req.body.dataURL}) 
     .then(function(picto){
         res.redirect(`/home`)
     });

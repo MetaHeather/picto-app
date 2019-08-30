@@ -5,6 +5,7 @@
 <p class="user-name"><%= name %></p>
 <a class="link-button" href="/picto/new">Create a Picto!</a>
 
+<p>Your Pictos</p>
 <% if(pictos.length){ 
     pictos.forEach(function(picto){ %>
       <a href="/picto/<%= picto._id %>">
@@ -12,5 +13,16 @@
       </a> 
   <%  }); 
 } %>
+<br>
+<p>Other users recent Pictos</p>
+<% if(otherPictos.length){ 
+    otherPictos.forEach(function(picto){ %>
+      <a href="/picto/<%= picto._id %>">
+      <img class="picto-img" src="<%= picto.imgData %>" alt="Picto">     
+      </a> 
+  <%  }); 
+} %>
+
+
 
 <%- include('../partials/footer') %>
