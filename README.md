@@ -46,4 +46,9 @@ AAU |  I want to be able to comment on another users post | so that I can intera
 AAU | I want to be able to follow other users | so that I can keep up with their posts 
 AAU | I want to be able to search for other users | so that I can see their profles
 
+# Planned Features
+* Add search functionality to find specific users
+* Allow users to follow each other
+* Add a profile page for Pictos with sort function
+
 

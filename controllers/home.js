@@ -13,7 +13,7 @@ function index(req, res, next) {
             createdAt: 'descending'
         })
         .then(function (pictos) {
-            return Picto.where("creator").ne(req.user.id).limit(10)
+            return Picto.where("creator").ne(req.user.id).limit(15)
                 .then(function (otherPictos) {
                     res.render('home/index', {
                         user: req.user,
