@@ -1,28 +1,29 @@
 <%- include('../partials/header') %>
+<div class="home-page">
 
-
-<img class="profile-pic" src="<%= user.profilePic %>" alt="Your Profile Picture" width="80">
-<p class="user-name"><%= name %></p>
-<a class="link-button" href="/picto/new">Create a Picto!</a>
-
-<p>Your Pictos</p>
-<% if(pictos.length){ 
+    <section class="column">
+        <img class="profile-pic" src="<%= user.profilePic %>" alt="Your Profile Picture" width="80">
+        <p class="user-name"><%= name %></p>
+        <a class="link-button" href="/picto/new">Create a Picto!</a>
+        <h1>Your Pictos</h1>
+        <% if(pictos.length){ 
     pictos.forEach(function(picto){ %>
-      <a href="/picto/<%= picto._id %>">
-      <img class="picto-img" src="<%= picto.imgData %>" alt="Picto">     
-      </a> 
-  <%  }); 
+        <a href="/picto/<%= picto._id %>">
+            <img class="picto-img" src="<%= picto.imgData %>" alt="Picto">
+        </a>
+        <%  }); 
 } %>
-<br>
-<p>Other users recent Pictos</p>
-<% if(otherPictos.length){ 
+    </section>
+    <section class="column">
+        <h1>Other users recent Pictos</h1>
+        <% if(otherPictos.length){ 
     otherPictos.forEach(function(picto){ %>
-      <a href="/picto/<%= picto._id %>">
-      <img class="picto-img" src="<%= picto.imgData %>" alt="Picto">     
-      </a> 
-  <%  }); 
+        <a href="/picto/<%= picto._id %>">
+            <img class="picto-img" src="<%= picto.imgData %>" alt="Picto">
+        </a>
+        <%  }); 
 } %>
+    </section>
 
-
-
+</div>
 <%- include('../partials/footer') %>

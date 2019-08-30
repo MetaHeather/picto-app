@@ -1,24 +1,29 @@
+* {
+    box-sizing: border-box;
+  }
+
 :root {
     font-family: sans-serif;
 }
 
 body, html{
     margin:0;
-    padding: none;
     background-color: #B68192;
     position: relative;
 }
 
 .logo-bar {
     background-color: #72B8CC;
+    min-width: 100%;
+    height: 10vmin;
+    padding-left: 2vmin;
+}
+
+.logo-bar > h1 {
+    margin: 0;
     font-family: 'Nothing You Could Do', cursive;
     font-weight: 900;
     font-size: 8vmin;
-    align-content: left;
-    min-width: 100%;
-    height: 10vmin;
-    margin: 0;
-    padding-left: 2vmin;
 }
 
 .login-section {
