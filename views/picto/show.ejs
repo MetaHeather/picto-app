@@ -7,6 +7,9 @@
 <br>
 <% if(isCurrentUser){ %>
    <a class="link-button" href="/picto/<%= picto._id %>/edit">Edit Picto</a> 
+   <form action="/picto/<%= picto._id %>?_method=DELETE" method="POST">
+     <button type="submit" class="link-button">Delete Picto</button>
+   </form>
 <% } else { %>
    <a class="link-button" href="/picto/<%= picto._id %>/comments/new">Add a Comment</a> 
 <% } %>

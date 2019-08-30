@@ -12,6 +12,8 @@ router.get('/:id', pictoCtrl.show);
 router.get('/:id/edit', pictoCtrl.edit);
 //Updates specific Picto
 router.put('/:id', pictoCtrl.update);
+//Delete a specific Picto
+router.delete('/:id', pictoCtrl.deletePicto);
 
 
 module.exports = router;

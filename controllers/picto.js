@@ -6,7 +6,8 @@ module.exports = {
     create,
     show,
     edit,
-    update
+    update,
+    deletePicto
 };
 
 function newPicto(req, res, next){
@@ -63,3 +64,13 @@ function update(req, res, next) {
         res.redirect(`/home`)
     });
 }
+
+function deletePicto(req, res, next) {
+    Picto.findByIdAndDelete(req.params.id)
+    .then(function(){
+        Comment.deleteMany({picto: req.params.id})
+        .then(function(){
+            res.redirect('/home');  
+        });
+    }); 
+};
