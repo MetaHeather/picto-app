@@ -1,3 +1,7 @@
+:root {
+    font-family: sans-serif;
+}
+
 body, html{
     margin:0;
     padding: none;
@@ -18,11 +22,14 @@ body, html{
 }
 
 .login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #72B8CC;
-    position: absolute;
     text-align: center;
-    top: 30vmin;
-    left: 60vmin;
+    margin: 0 auto;
+    margin-top: 20vmin;
     width: 80vmin;
     height: 40vmin;
 }
@@ -34,10 +41,9 @@ body, html{
     color: black;
     padding: 1vmin;
     background-color: lightgrey;
-    margin-top: 100px;
   }
 
   #log-in {
-      margin-bottom: 10vmin;
-      margin-top: 10vmin;
+      margin-bottom: 2vmin;
+      margin-top: 2vmin;
   }
