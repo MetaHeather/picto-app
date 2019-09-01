@@ -72,7 +72,7 @@ Page Styles
   padding: 1vmin 2vmin;
 }
 
-.logo-bar > h1 {
+.logo-bar h1 {
   margin: 0;
   font-family: 'Nothing You Could Do', cursive;
   font-weight: 900;
@@ -135,6 +135,13 @@ Page Styles
   grid-gap: 2vmin;
   margin-top: 2vmin;
   justify-content: start;
+}
+
+.user-time {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 450;
+  font-size: 2.5vmin;
 }
 
 

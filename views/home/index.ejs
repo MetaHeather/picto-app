@@ -12,6 +12,9 @@
         <a class="picto-link" href="/picto/<%= picto._id %>">
             <img class="picto-img" src="<%= picto.imgData %>" alt="Picto">
         </a>
+        <div class="user-time">
+        <p><%= picto.createdAt.toLocaleDateString('fullwide', {hour: 'numeric', minute: 'numeric'}) %></p>
+        </div>
         <%  }); 
 } %>
     </section>
@@ -22,6 +25,10 @@
         <a class="picto-link" href="/picto/<%= picto._id %>">
             <img class="picto-img" src="<%= picto.imgData %>" alt="Picto">
         </a>
+        <div class="user-time">
+        <p><%= picto.creator.name %></p>
+        <p><%= picto.createdAt.toLocaleDateString('fullwide', {hour: 'numeric', minute: 'numeric'}) %></p>
+        </div>
         <%  }); 
 } %>
     </section>
